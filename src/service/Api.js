@@ -4,7 +4,7 @@ const BASE_URL = 'https://pixabay.com/api/';
 
 const fetchImages = async (searchItem, page) => {
   const rawResult = await fetch(
-    `${BASE_URL}?q=${searchItem}&page=${page}&key=${API_KEY}&order=latest&image_type=photo&orientation=horizontal&per_page=12`,
+    `${BASE_URL}?q=${searchItem}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`,
   );
 
   if (!rawResult.ok) {
