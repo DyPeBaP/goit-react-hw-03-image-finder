@@ -1,21 +1,19 @@
 import s from "./ImageGalleryItem.module.css";
-import { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-class ImageGalleryItem extends Component {
-  render() {
-    return (
+const ImageGalleryItem = ({ webformatURL, showImageHandle }) => {
+      return (
       <li className={s.ImageGalleryItem}>
         <img
-          src={this.props.webformatURL}
+          src={webformatURL}
           alt=""
           className={s.ImageGalleryItemImage}
-          onClick={this.props.showImageHandle}
+          onClick={showImageHandle}
         />
       </li>
     );
-  }
-}
+  };
 
 ImageGalleryItem.propType = {
   img: PropTypes.string.isRequired,

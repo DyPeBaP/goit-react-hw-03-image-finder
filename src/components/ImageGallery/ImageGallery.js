@@ -1,24 +1,22 @@
 import s from "./ImageGallery.module.css";
-import { Component } from "react";
+import React from "react";
 import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
 
-class ImageGallery extends Component {
-  render() {
-    return (
+const ImageGallery = ({ images, showImageHandler }) => {
+      return (
       <ul className={s.ImageGallery}>
-        {this.props.images.map((image, index) => {
+        {images.map(({ id, webformatURL, largeImageURL }, index) => {
           return (
             <ImageGalleryItem
-              key={image.id}
-              webformatURL={image.webformatURL}
-              showImageHandle={this.props.showImageHandler(image.largeImageURL)}
+              key={id}
+              webformatURL={webformatURL}
+              showImageHandle={showImageHandler(largeImageURL)}
               index={index}
             />
           );
         })}
       </ul>
     );
-  }
 }
 
 export default ImageGallery;
